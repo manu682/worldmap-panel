@@ -20,7 +20,7 @@ const tileServers = {
   'Open Street Map': {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ',
-    subdomains: 'abcd'
+    subdomains: 'abc'
   }
 };
 
