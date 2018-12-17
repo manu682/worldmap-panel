@@ -322,15 +322,7 @@ describe('Worldmap', () => {
     const fixture = '<div id="fixture" class="mapcontainer"></div>';
     document.body.insertAdjacentHTML('afterbegin', fixture);
 
-    ctrl = {
-      panel: {
-        mapCenterLatitude: 0,
-        mapCenterLongitude: 0,
-        initialZoom: 1,
-        colors: ['red', 'blue', 'green'],
-      },
-      tileServer: 'CartoDB Positron',
-    };
+    ctrl = { panel: { mapCenterLatitude: 0, mapCenterLongitude: 0, initialZoom: 1, colors: ['red', 'blue', 'green'] }, tileServer: 'Open Street Map' };
     worldMap = new WorldMap(ctrl, document.getElementsByClassName('mapcontainer')[0]);
     worldMap.createMap();
   }

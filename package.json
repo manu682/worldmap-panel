@@ -1,7 +1,7 @@
 {
-  "name": "worldmap-panel",
+  "name": "worldmap-panel-osm",
   "version": "1.0.0",
-  "description": "Worldmap Panel Plugin for Grafana",
+  "description": "Worldmap Panel Plugin for Grafana with OSM tile server",
   "main": "src/module.js",
   "scripts": {
     "build": "node --max-old-space-size=8192 ./node_modules/.bin/webpack --config webpack.config.prod.js",

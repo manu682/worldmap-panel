@@ -8,15 +8,20 @@ const tileServers = {
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
       '&copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-    subdomains: 'abcd',
+    subdomains: 'abcd'
   },
   'CartoDB Dark': {
     url: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
       '&copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-    subdomains: 'abcd',
+    subdomains: 'abcd'
   },
+  'Open Street Map': {
+    url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ',
+    subdomains: 'abcd'
+  }
 };
 
 export default class WorldMap {
@@ -42,7 +47,7 @@ export default class WorldMap {
       worldCopyJump: true,
       preferCanvas: true,
       center: mapCenter,
-      zoom: parseInt(this.ctrl.panel.initialZoom, 10) || 1,
+      zoom: parseInt(this.ctrl.panel.initialZoom, 10) || 1
     });
     this.setMouseWheelZoom();
 
@@ -52,7 +57,7 @@ export default class WorldMap {
       subdomains: selectedTileServer.subdomains,
       reuseTiles: true,
       detectRetina: true,
-      attribution: selectedTileServer.attribution,
+      attribution: selectedTileServer.attribution
     }).addTo(this.map);
   }
 
@@ -153,7 +158,7 @@ export default class WorldMap {
           color: this.getColor(dataPoint.value),
           fillColor: this.getColor(dataPoint.value),
           fillOpacity: 0.5,
-          location: dataPoint.key,
+          location: dataPoint.key
         });
         circle.unbindPopup();
         this.createPopup(circle, dataPoint.locationName, dataPoint.valueRounded);
@@ -167,7 +172,7 @@ export default class WorldMap {
       color: this.getColor(dataPoint.value),
       fillColor: this.getColor(dataPoint.value),
       fillOpacity: 0.5,
-      location: dataPoint.key,
+      location: dataPoint.key
     });
 
     this.createPopup(circle, dataPoint.locationName, dataPoint.valueRounded);
@@ -194,7 +199,7 @@ export default class WorldMap {
     circle.bindPopup(label, {
       offset: (<any>window).L.point(0, -2),
       className: 'worldmap-popup',
-      closeButton: this.ctrl.panel.stickyLabels,
+      closeButton: this.ctrl.panel.stickyLabels
     });
 
     circle.on('mouseover', function onMouseOver(evt) {
